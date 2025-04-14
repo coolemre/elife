@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    position: relative;
+  }
+  
+  /* Teşekkür sayfası için resim ve mesaj */
+  .thank-you-container {
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    z-index: 10;
+  }
+  
+  .thank-you-image {
+    width: 200px; /* Resmin boyutunu artırdık */
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease; /* Resmin hareketi için transition ekledik */
+  }
+  
+  /* Resme hover efekti */
+  .thank-you-image:hover {
+    transform: scale(1.1); /* Resim hover ile büyüyecek */
+  }
+  
+  /* Teşekkür mesajı */
+  .thank-you-message {
+    font-size: 35px; /* Mesajın boyutunu büyüttük */
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    margin-top: 20px; /* Mesajın biraz altına kaydırdık */
+  }
+  
+  /* Yeni butonlar */
+  .next-buttons {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+  }
+  
+  .next-buttons button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #00ff88;
+    color: #000;
+  }
+  
+  .next-buttons button:hover {
+    transform: scale(1.1);
+  }
+  

@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    background: #8f4077;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    position: relative;
+  }
+  
+  /* Fotoğraf ve mesaj */
+  .photo-container {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    position: relative; /* Kalp emojisini resmin üstüne yerleştirebilmek için */
+  }
+  
+  .photo-container img {
+    width: 150px; /* Resim küçük olacak */
+    height: auto;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Kalp emojisi */
+  .heart-overlay {
+    font-size: 50px;
+    position: absolute;
+    top: -20px; /* Resmin üst kısmında yer alacak */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .photo-container:hover .heart-overlay {
+    opacity: 1; /* Hover olduğunda kalp emojisinin görünmesini sağlar */
+  }
+  
+  /* Mesaj */
+  .message {
+    font-size: 25px; /* Yazı boyutunu büyüttük */
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    margin-top: -70px; /* Resmin üst kısmına daha yakın olsun */
+  }
+  
+  /* 200 Dilde "Seni Seviyorum" yazılarının kayan animasyonu */
+  .bg-text {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
+    white-space: nowrap;
+    animation: floatText linear infinite;
+    top: 100vh;
+  }
+  
+  @keyframes floatText {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120vh); }
+  }
+  
+  /* EVET ve Malesef Butonları */
+  .answer-buttons {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 20;
+  }
+  
+  .answer-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .answer-buttons button:first-child {
+    background-color: #00ff88;
+    color: #000;
+  }
+  
+  .answer-buttons button:last-child {
+    background-color: #ff0033;
+    color: #fff;
+  }
+  
+  .answer-buttons button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Müzik Çalar */
+  .audio-player {
+    position: absolute;
+    top: 75%; /* Müzik çalar butonu butonlardan hemen aşağıda olacak */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 15;
+  }
+  
+  audio {
+    width: 300px;
+  }
+  

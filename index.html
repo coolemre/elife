@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sadece Senin İçin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Fotoğraf ve Sevgi Mesajı -->
+  <div class="photo-container">
+    <div class="message">SENİ GERÇEKTEN ÇOK SEVİYORUM BENİMLE ÇIKARMISIN?</div> <!-- Yazıyı resmin üst kısmına kaydırdık -->
+    <div class="heart-overlay">❤️</div> <!-- Kalp Emojisi Burada -->
+    <img src="IMG-20250407-WA0003.jpg" alt="Senin İçin" id="loveImage">
+  </div>
+
+  <!-- Butonlar -->
+  <div class="answer-buttons">
+    <button onclick="location.href='tesekkur.html'">EVETTTT ❤️</button>
+    <button onclick="location.href='uzgun.html'">malesef 💔</button>
+  </div>
+
+  <!-- Müzik Çalar kısmı -->
+  <div class="audio-player">
+    <audio controls>
+      <source src="Duman - Her Şeyi Yak.mp3" type="audio/mp3">
+      Tarayıcınız audio etiketini desteklemiyor.
+    </audio>
+  </div>
+
+  <!-- 200 Dilde "Seni Seviyorum" yazılarının kayan animasyonu -->
+  <script>
+    const messages = [
+      "Seni seviyorum", "I love you", "Je t'aime", "Te amo", "Ich liebe dich", "Ti amo",
+      "Я тебя люблю", "愛してる", "사랑해", "Te iubesc", "Eu te amo", "Ik hou van jou",
+      "Jeg elsker dig", "Kocham cię", "Amo-te", "Ngiyakuthanda", "Ana behibek",
+      "Minä rakastan sinua", "Mahal kita", "Ek is lief vir jou", "Volim te",
+      "Mi amas vin", "Ndagukunda", "T'estimo", "Tôi yêu bạn", "Jag älskar dig",
+      "Main tumse pyaar karta hoon", "Я цябе кахаю", "Wo ai ni", "Nakupenda", "Lubim ta",
+      "Obicham te", "Naku penda", "Taim i’ngra leat", "Kocham cie", "S'agapo",
+      "Jeg elsker deg", "Mi luv yu", "Aloha wau ia’oe", "Ma armastan sind",
+      "Te sakam", "Ich han di gärn", "Saranghaeyo", "Mən səni sevirəm",
+      "Te dua", "Volim te", "Ngiyakuthanda", "Bahibik", "Njan ninne snehikkunnu",
+      "Me te quiero", "Amo-te", "Ljubim te", "Kocham cię", "Nakupenda", "Mi amo tu",
+      "Taim i’ngra leat", "Ana uhibbuka", "Mo ni fe re", "T’estimo"
+    ];
+
+    function createText() {
+      const text = document.createElement('div');
+      text.classList.add('bg-text');
+      text.innerText = messages[Math.floor(Math.random() * messages.length)];
+      text.style.left = Math.random() * 100 + 'vw';
+      text.style.fontSize = (16 + Math.random() * 20) + 'px';
+      text.style.animationDuration = (12 + Math.random() * 8) + 's';
+      text.style.opacity = 0.15 + Math.random() * 0.3;
+      document.body.appendChild(text);
+
+      setTimeout(() => {
+        document.body.removeChild(text);
+      }, 20000);
+    }
+
+    setInterval(createText, 200);
+  </script>
+
+</body>
+</html>
